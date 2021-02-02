@@ -1,0 +1,12 @@
+# Build under MINGW
+
+export PKG_CONFIG_PATH=/c/dafne/agg-2.6/agg-src/:$PKG_CONFIG_PATH
+python setup.py build_ext -I"C:/Python38/Lib/site-packages/numpy/core/include;C:/src/potrace-1.16/src;C:/src/agg-2.6/agg-src/include" -L"C:/src/potrace-1.16/src/.libs;C:/src/agg-2.6/agg-src/src/.libs" --inplace
+
+# Build for MSVC
+# libpotrace-0.dll is required in the working directory
+#compile mini_agg
+cl /c /MD agg_curves.cpp
+
+# run python
+python setup.py build_ext -I"C:/Python38/Lib/site-packages/numpy/core/include;C:/src/potrace-1.16/src;agg_mini" --inplace
