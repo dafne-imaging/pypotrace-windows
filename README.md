@@ -6,7 +6,7 @@ This is a clone of repository https://github.com/flupke/pypotrace
 With some adaptations to be compiled under Windows/MSVC
 
 First, build the potrace library (or use the distributed binary in this repo) with MinGW. Make sure of running ``./configure --with-libpotrace``
-Copy the dll and the lib files to the base of this repo. (If a lib file is not generated, see https://stackoverflow.com/questions/9360280/how-to-make-a-lib-file-when-have-a-dll-file-and-a-header-file)
+Copy the libpotrace.a file from src/.libs to the base of this repo.
 
 Then build the agg_mini library (it's just the small part of the AGG library that the extension actually uses):
 ``cl /c /MD agg_curves.cpp``
